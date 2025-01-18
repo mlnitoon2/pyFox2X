@@ -1,17 +1,11 @@
-[tool.poetry]
-name = "pyfox2x"  # The name of the package
-version = "0.1.0"  # Package version
-description = "A Python client for SmartFoxServer 2X"  # A short description of the package
-authors = ["zewsic"]  # Replace with your name and email
-license = "MIT"  # The license for your package, can be MIT, GPL, etc.
-readme = "README.md"  # Path to your README file (if it exists)
+from setuptools import setup, find_packages
 
-# Python compatibility (ensure this matches your Python version)
-dependencies = [
-    
-]
-
-[build-system]
-# This is required for building and packaging the project
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+setup(
+    name="pyfox2x",
+    version="0.1.0",
+    description="A Python client for SmartFoxServer 2X",
+    packages=find_packages(include=["pyfox2x", "pyfox2x.*"]),  # This will find both 'sfs_types' and 'sfs_client'
+    install_requires=[
+        "requests",  # Add other dependencies here
+    ],
+)
